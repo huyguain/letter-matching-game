@@ -1,0 +1,13 @@
+.card-child {
+    height: 100px;
+    padding-left: 1px;
+    padding-right: 1px;
+    background-color: #bae7ff;
+    border: 1px solid #1890ff;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+    &:hover {
+        background-color: #91d5ff;
+    }
+}
