@@ -2,13 +2,18 @@ import React, { useReducer } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Board from './components/Board/Board';
+import { reducer, initialState } from './store/reducer';
+import { CardsContext } from './store/context';
 
 const App = _ => {
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div className="App">
-      <Header></Header>
-      <Board></Board>
-    </div>
+    <CardsContext.Provider value={{ state, dispatch }}>
+      <div className="App">
+        <Header></Header>
+        <Board></Board>
+      </div>
+    </CardsContext.Provider>
   );
 }
 
