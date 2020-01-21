@@ -25,9 +25,10 @@ const initialState = {
 };
 
 function reducer(state, action) {
+    console.log('huynt action', action);
     switch (action.type) {
-        case 'increment':
-            return { count: state.count + 1 };
+        case 'SET_NEW_CARDS':
+            return {...state, cards: action.payload};
         case 'decrement':
             return { count: state.count - 1 };
         default:
