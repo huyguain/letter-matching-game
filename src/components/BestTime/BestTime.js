@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './BestTime.scss'
+import { CardsContext } from '../../store/context';
 
 const BestTime = props => {
+  const { state, dispatch } = useContext(CardsContext);
+  const { bestEasy, bestNormal, bestHard } = state;
   return (
     <div className="BestTime margin-top ant-row">
       <div className="ant-col ant-col-2">Best time:</div>
@@ -16,9 +19,9 @@ const BestTime = props => {
           </thead>
           <tbody>
             <tr>
-              <td>--:--</td>
-              <td>--:--</td>
-              <td>--:--</td>
+              <td>{bestEasy ? bestEasy : '--:--'}</td>
+              <td>{bestNormal ? bestNormal : '--:--'}</td>
+              <td>{bestHard ? bestHard : '--:--'}</td>
             </tr>
           </tbody>
         </table>
