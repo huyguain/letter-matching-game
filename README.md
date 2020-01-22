@@ -1,69 +1,54 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Các reducer, context, componet trong bài test
 
-In the project directory, you can run:
+Trong source code bài test này, tôi sử dụng useReducer, useContext (một trong những hooks của React) để quản 
+lí state của project. Tất cả componet tôi đều sử dụng functional component và hooks thay vì sử dụng statefull 
+component, lifecyle như những bản react cũ. Tối đã cố gắng cập nhật công nghệ mới nhất để xử lí bài toán được
+đặt ra. Dưới đây là một số giải thích về reducer, context, componet mà tôi đã xây dựng trong project của mình:
 
-### `yarn start`
+### reducer
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Tối có biến khởi tạo state project (initialState) và reducer tương ứng để hứng action đươc dispatch từ các component.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### context
 
-### `yarn test`
+- Tối sử dụng hook useContext với mục đích biến thánh phần reducer (ở trên) của tôi có vai trò như biến toàn cục. Các component con có thể dùng chung, truy cập, gọi nó. Nhờ việc sử dụng useReducer, useContext tôi không cần sử dụng thêm thư viện Redux nưa - vốn cài cắm, dùng không phải quá dễ dàng lắm.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### App component
 
-### `yarn build`
+- Đây là component cha cao nhất của project. Ở đây, tôi gọi ra useReducer, rối lấy state và hàm dispatch của nó gán cho CardsContext. Sau đó, tôi bao CardsContext của mình provider component App.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Header component
+- Gồm các component con: Options, WonLose, BestTime.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Options component
+- Hiển thị option chọn mức độ chơi của trò chơi, nút bắt đầu chơi.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### WonLose component
+- Hiển thị số trận thắng, thua của người chơi. Nhẽ ra, tối nên lưu lại dữ liệu này vào storage, đây là một thiếu sót.
 
-### `yarn eject`
+### BestTime component
+- Hiển thị ki lục của người chơi, tức là thời gian hoàn thành câu đố tuong ứng với 3 level.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### TimeRemainning component
+- Hiển thị bộ đếm ngượi thời gian giới hạn cho người chơi.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### TimeRemainning component
+- Hiển thị bộ đếm ngượi thời gian giới hạn cho người chơi.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Board component
+- Hiển thị danh sách Card component. Đây là component quan trọng nhát của project. Luồng của nó như sau:
++ Nó có 2 trạng thái checkers, completed. Checkers là mảng tối đa 2 phần tử, mục đích check 2 thẻ vừa chọn có match với nhau không. Nếu match, key của chúng sẽ được lưu vào mảng completed.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Một số nguồn tham khảo
 
-## Learn More
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[React documentation](https://reactjs.org/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://medium.com/@cqpro/lets-build-a-matching-card-game-with-react-d8923d915e46
 
-### Code Splitting
+##Một số thư viện cài thêm
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# letter-matching-game
+- antd, bootstrap, node-sass, react-card-flip
