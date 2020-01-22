@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import './Card.scss'
+import './Card.css'
 import ReactCardFlip from 'react-card-flip';
 import { CardsContext } from '../../store/context';
 

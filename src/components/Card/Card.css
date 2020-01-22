@@ -7,15 +7,17 @@
     margin-bottom: 2px;
     margin-right: 2px;
     cursor: pointer;
-    &:hover {
-        background-color: #91d5ff;
-    }
     line-height: 100px;
     color: #333;
     font-size: 32px;
     text-align: center;
-    &.show {
-        background-color: #adc6ff;
-        border: 1px solid #2f54eb;
-    }
+}
+
+.card-child:hover {
+    background-color: #91d5ff;
+}
+
+.card-child.show {
+    background-color: #adc6ff;
+    border: 1px solid #2f54eb;
 }

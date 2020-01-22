@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import './App.scss';
+import './App.css';
 import Header from './components/Header/Header';
 import Board from './components/Board/Board';
 import { reducer, initialState } from './store/reducer';

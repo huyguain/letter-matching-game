@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import './TimeRemain.scss'
+import './TimeRemain.css'
 import { Icon, Modal } from 'antd';
 import { CardsContext } from '../../store/context';
 

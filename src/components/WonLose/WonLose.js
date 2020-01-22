@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './WonLose.scss';
+import './WonLose.css';
 import { CardsContext } from '../../store/context';
 
 const WonLose = props => {

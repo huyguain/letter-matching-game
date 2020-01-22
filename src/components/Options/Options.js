@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import './Options.scss'
+import './Options.css'
 import { Select } from 'antd';
 import { Button } from 'antd';
 import { CardsContext } from '../../store/context';

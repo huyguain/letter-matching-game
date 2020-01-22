@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import './Board.scss'
+import './Board.css'
 import Card from '../Card/Card';
 import { CardsContext } from '../../store/context';
 import TimeRemain from '../TimeRemain/TimeRemain';

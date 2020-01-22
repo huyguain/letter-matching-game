@@ -1,5 +1,5 @@
 import React from 'react'
-import './Header.scss'
+import './Header.css'
 import Options from '../Options/Options';
 import WonLose from '../WonLose/WonLose';
 import BestTime from '../BestTime/BestTime';

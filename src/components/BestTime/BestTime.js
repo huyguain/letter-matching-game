@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import './BestTime.scss'
+import './BestTime.css'
 import { CardsContext } from '../../store/context';
 
 const BestTime = props => {
